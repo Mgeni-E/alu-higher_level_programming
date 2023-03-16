@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Square:
     """Its crazy that we are not importing any modules"""
     
