@@ -1,4 +1,4 @@
-I-- lists all Comedy shows in the database
+-- lists all Comedy shows in the database
 SELECT tv_shows.title
   FROM tv_shows 
        INNER JOIN tv_show_genres 
