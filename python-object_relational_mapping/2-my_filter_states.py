@@ -1,21 +1,19 @@
 #!/usr/bin/python3
-""" filters states according to input """
-import sys
+"""
+a script that takes in an argument and displays all values in
+the states table of hbtn_0e_0_usa where name matches the argument.
+"""
 import MySQLdb
-
+from sys import argv
 if __name__ == "__main__":
-    with MySQLdb.connect(
-                user=sys.argv[1],
-                passwd=sys.argv[2],
-                db=sys.argv[3],
-                host='localhost',
-                port=3306
-    )as engine:
-        cur = engine.cursor()
-        cur.execute(
-                "SELECT * FROM states \
-                 WHERE name LIKE BINARY'{}'".format(sys.argv[4]))
-        all_states = cur.fetchall()
-        for each in all_states:
-            print(each)
-        cur.close()
+    connect = MySQLdb.connect(
+        host="localhost", port=3306, user=argv[1],
+        password=argv[2], database=argv[3])
+    cursor = connect.cursor()
+    cursor.execute(
+            "SELECT * FROM states WHERE name LIKE"
+            " '{}' ORDER BY id ASC".format(argv[4]))
+    db = cursor.fetchall()
+    for x in db:
+        if x[1] == argv[4]:
+            print(x)
