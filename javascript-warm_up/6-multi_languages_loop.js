@@ -1,12 +1,7 @@
 #!/usr/bin/node
-function factorial (number) {
-  if (isNaN(parseInt(number))) {
-    return (1);
-  }
-  if (number === 1) {
-    return (1);
-  }
-  return (number * factorial(number - 1));
-}
 
-console.log(factorial(parseInt(process.argv[2])));
+const arr = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
