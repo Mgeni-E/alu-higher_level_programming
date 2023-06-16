@@ -1,4 +1,6 @@
 #!/usr/bin/node
+// Script class Rectangle that defines a rectangle
+
 const Rectangle = class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
@@ -9,8 +11,8 @@ const Rectangle = class Rectangle {
 
   print () {
     let prints = '';
-    for (let xx = 0; xx < this.height; xx++) {
-      for (let yy = 0; yy < this.width; yy++) {
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
         prints = prints + 'X';
       }
       console.log(prints);
@@ -18,5 +20,5 @@ const Rectangle = class Rectangle {
     }
   }
 };
-module.exports = Rectangle;
 
+module.exports = Rectangle;
